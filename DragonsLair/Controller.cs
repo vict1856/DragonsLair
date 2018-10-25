@@ -41,7 +41,7 @@ namespace DragonsLair
             //{
             //    Console.WriteLine(allWinners[i] + " WON AGAINST " + allLosers[i]);
             //}
-            Console.WriteLine("Number of wins:");
+            Console.WriteLine("Number of Wins:");
             teams = ourtournament.GetTeams().ConvertAll(idx => idx.ToString());
             int wins;
             int wins2;
