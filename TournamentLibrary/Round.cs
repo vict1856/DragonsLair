@@ -4,7 +4,7 @@ namespace TournamentLib
 {
     public class Round
     {
-        private List<Match> matches = new List<Match>();
+        public List<Match> matches = new List<Match>();
         public List<Team> winners = new List<Team>();
         private List<Team> losers = new List<Team>();
         private List<Team> results = new List<Team>();

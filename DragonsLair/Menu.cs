@@ -27,12 +27,23 @@ namespace DragonsLair
                     case "3":
                         SaveMatch();
                         break;
+                    case "4":
+                        GetMatches();
+                        break;
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
                         break;
                 }
             } while (running);
+        }
+
+        private void GetMatches()
+        {
+            Console.Write("Angiv navn på turnering: ");
+            string tournamentName = Console.ReadLine();
+            Console.Clear();
+            control.GetMatches();
         }
 
         private void ShowMenu()
