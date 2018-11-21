@@ -16,23 +16,61 @@ namespace DragonsLair
             ourtournament.SetupTestRounds();
 
             Console.WriteLine("Choose round:");
+
             string read = Console.ReadLine();
             int number = int.Parse(read);
+
+            Console.Clear();
+
             Round round = ourtournament.GetRound(number - 1);
             List<Match> roundmatches = round.matches;
-            Console.WriteLine("Find Match by Name:");
-            string name = Console.ReadLine();
-            Team team = new Team(name);
 
             foreach (Match match in roundmatches)
             {
-                if(match.FirstOpponent.Name == team.Name || match.SecondOpponent.Name == team.Name)
+                Console.WriteLine(match.FirstOpponent + " vs " + match.SecondOpponent);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Press enter to return to menu");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public void GetSpecificMatch()
+        {
+            Tournament ourtournament;
+            ourtournament = new Tournament("Our Tournament");
+            ourtournament.SetupTestRounds();
+
+            Console.WriteLine("Choose round:");
+
+            string read = Console.ReadLine();
+            int number = int.Parse(read);
+
+            Round round = ourtournament.GetRound(number - 1);
+            List<Match> roundmatches = round.matches;
+
+            Console.WriteLine("Find Match by Name:");
+
+            string name = Console.ReadLine();
+            Team team = new Team(name);
+
+            Console.Clear();
+
+            foreach (Match match in roundmatches)
+            {
+                if (match.FirstOpponent.Name == team.Name || match.SecondOpponent.Name == team.Name)
                 {
                     Console.WriteLine(match.FirstOpponent + " VS " + match.SecondOpponent);
                 }
-                //Console.WriteLine(match.FirstOpponent + " vs " + match.SecondOpponent);
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("Press enter to return to menu");
+            Console.ReadLine();
+            Console.Clear();
         }
+
         public void ShowScore(string tournamentName)
         {
             Tournament ourtournament;

@@ -30,12 +30,23 @@ namespace DragonsLair
                     case "4":
                         GetMatches();
                         break;
+                    case "5":
+                        GetSpecificMatch();
+                        break;
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
                         break;
                 }
             } while (running);
+        }
+
+        private void GetSpecificMatch()
+        {
+            Console.Write("Angiv navn på turnering: ");
+            string tournamentName = Console.ReadLine();
+            Console.Clear();
+            control.GetSpecificMatch();
         }
 
         private void GetMatches()
@@ -53,6 +64,8 @@ namespace DragonsLair
             Console.WriteLine("1. Præsenter turneringsstilling");
             Console.WriteLine("2. Planlæg runde i turnering");
             Console.WriteLine("3. Registrér afviklet kamp");
+            Console.WriteLine("4. Vis kampe fra specifik runde");
+            Console.WriteLine("5. Vis specifik kamp fra runde");
             Console.WriteLine("");
             Console.WriteLine("0. Exit");
         }
